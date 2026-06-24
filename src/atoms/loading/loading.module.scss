@@ -1,0 +1,21 @@
+@use '@styles/settings' as *;
+
+.loading {
+  display: inline-flex;
+  width: rem(20px);
+  height: rem(20px);
+  border-top-width: rem(1px);
+  border-right: rem(1px) solid tokens(colors, dark);
+  border-radius: 50%;
+  animation: kf-loader 1s linear infinite;
+}
+
+@keyframes kf-loader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

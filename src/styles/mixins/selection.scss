@@ -1,0 +1,11 @@
+@use '@styles/settings/tokens' as *;
+
+@mixin selection(
+  $bg: tokens(colors, dark),
+  $color: tokens(colors, light)
+) {
+  ::selection {
+    background-color: $bg;
+    color: $color;
+  }
+}

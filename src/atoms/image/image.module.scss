@@ -1,0 +1,52 @@
+@use '@styles/settings' as *;
+
+.image {
+  display: block;
+  width: 100%;
+
+  @include disable(true);
+
+  &--cover {
+    @include object-fit(cover, null);
+  }
+
+  &--contain {
+    @include object-fit(contain, null);
+  }
+
+  &--position-center {
+    @include object-fit(null, center center);
+  }
+
+  &--position-left-top {
+    @include object-fit(null, left top);
+  }
+
+  &--position-left-center {
+    @include object-fit(null, left center);
+  }
+
+  &--position-left-bottom {
+    @include object-fit(null, left bottom);
+  }
+
+  &--position-right-top {
+    @include object-fit(null, right top);
+  }
+
+  &--position-right-center {
+    @include object-fit(null, right center);
+  }
+
+  &--position-right-bottom {
+    @include object-fit(null, right bottom);
+  }
+
+  &--position-center-top {
+    @include object-fit(null, center top);
+  }
+
+  &--position-center-bottom {
+    @include object-fit(null, center bottom);
+  }
+}

@@ -1,0 +1,22 @@
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { {{camelCase name}}Mock } from './{{kebabCase name}}.mock'
+import { {{pascalCase name}} } from './{{kebabCase name}}.component'
+
+const meta: Meta<typeof {{pascalCase name}}> = {
+  title: '{{pascalCase directory}}/{{pascalCase name}}',
+  component: {{pascalCase name}},
+  parameters: {
+    layout: 'centered',
+    design: {
+      type: 'figma',
+      url: ''
+    }
+  },
+  args: {{camelCase name}}Mock
+}
+
+export default meta
+
+type Story = StoryObj<typeof {{pascalCase name}}>
+
+export const Default: Story = {}

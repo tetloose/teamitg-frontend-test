@@ -1,0 +1,9 @@
+import clsx from 'clsx'
+import type { {{pascalCase name}}Props } from './{{kebabCase name}}.types'
+import styles from './{{kebabCase name}}.module.scss'
+
+export const {{pascalCase name}} = ({ classNames = [] }: {{pascalCase name}}Props) => (
+  <div className={clsx(styles['{{kebabCase name}}'], ...classNames)}>
+    {{pascalCase name}}
+  </div>
+)

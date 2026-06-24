@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "paths": {
+      "@context/*": ["./src/context/*"],
+      "@atoms/*": ["./src/atoms/*"],
+      "@molecules/*": ["./src/molecules/*"],
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@crud/*": ["./src/crud/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@global/*": ["./src/global/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@images/*": ["./src/images/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@pages/*": ["./src/pages/*"]
+    },
+    "types": [
+      "@types/node",
+      "@types/react",
+      "vitest/globals",
+      "vite-plugin-svgr/client",
+      "vite/client"
+    ],
+    "useDefineForClassFields": true,
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "src",
+    "vite.config.ts",
+    ".d.ts/*.d.ts",
+    ".vitest/vitest.setup.ts"
+  ],
+  "exclude": [
+    ".husky",
+    ".scripts",
+    ".vscode",
+    "node_modules",
+    "public",
+    "build",
+    "storybook-static",
+    "coverage"
+  ]
+}

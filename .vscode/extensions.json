@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "stylelint.vscode-stylelint",
+    "editorconfig.editorconfig",
+    "SonarSource.sonarlint-vscode",
+    "vitest.explorer",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "dsznajder.es7-react-js-snippets",
+    "unifiedjs.vscode-mdx",
+    "Fooxly.workspace",
+    "mrmlnc.vscode-scss",
+    "usernamehw.errorlens",
+    "eamodio.gitlens"
+  ]
+}

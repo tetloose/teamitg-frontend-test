@@ -1,0 +1,26 @@
+@use '@styles/settings' as *;
+
+html {
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden auto;
+  font-size: tokens(rem, mobile);
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    sans-serif;
+  line-height: 1.5;
+
+  @include font-smoothing;
+  @include scrollbar;
+  @include selection;
+
+  @include mq(tokens(breakpoint, tablet)) {
+    font-size: tokens(rem, tablet);
+  }
+
+  @include mq(tokens(breakpoint, desktop)) {
+    font-size: tokens(rem, desktop);
+  }
+}

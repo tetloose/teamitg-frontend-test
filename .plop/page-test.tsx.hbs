@@ -1,0 +1,16 @@
+import { render } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
+import { use{{pascalCase name}} } from '@hooks/use-{{kebabCase name}}/use-{{kebabCase name}}.hooks'
+import {{pascalCase name}}Page from './{{kebabCase name}}.page'
+
+vi.mock('@hooks/use-{{kebabCase name}}/use-{{kebabCase name}}.hooks')
+
+describe('{{pascalCase name}}Page', () => {
+  it('renders', () => {
+    vi.mocked(use{{pascalCase name}}).mockReturnValue({})
+
+    render(<{{pascalCase name}}Page />)
+
+    expect(true).toBe(true)
+  })
+})

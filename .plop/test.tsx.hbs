@@ -1,0 +1,12 @@
+import { render, screen } from '@testing-library/react'
+import { describe, expect, it } from 'vitest'
+import { {{camelCase name}}Mock } from './{{kebabCase name}}.mock'
+import { {{pascalCase name}} } from './{{kebabCase name}}.component'
+
+describe('{{pascalCase name}}', () => {
+  it('renders', () => {
+    render(<{{pascalCase name}} {...{{camelCase name}}Mock} />)
+
+    expect(screen.getByText('{{pascalCase name}}')).toBeInTheDocument()
+  })
+})

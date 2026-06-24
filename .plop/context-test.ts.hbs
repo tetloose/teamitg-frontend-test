@@ -1,0 +1,34 @@
+import { act, renderHook } from '@testing-library/react'
+import { describe, expect, it, vi } from 'vitest'
+import { {{pascalCase name}}Provider, use{{pascalCase name}}Context } from './{{kebabCase name}}.context'
+import { INITIAL_{{constantCase name}} } from './{{kebabCase name}}.constants'
+
+describe('{{pascalCase name}}Context', () => {
+  it('provides initial state', () => {
+    const { result } = renderHook(() => use{{pascalCase name}}Context(), {
+      wrapper: {{pascalCase name}}Provider
+    })
+
+    expect(result.current.{{camelCase name}}).toEqual(INITIAL_{{constantCase name}})
+  })
+
+  it('update{{pascalCase name}} merges partial state', () => {
+    const { result } = renderHook(() => use{{pascalCase name}}Context(), {
+      wrapper: {{pascalCase name}}Provider
+    })
+
+    act(() => result.current.update{{pascalCase name}}({}))
+
+    expect(result.current.{{camelCase name}}).toEqual(INITIAL_{{constantCase name}})
+  })
+
+  it('throws when used outside provider', () => {
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {})
+
+    expect(() => renderHook(() => use{{pascalCase name}}Context())).toThrow(
+      '{{pascalCase name}}Context must be used within its corresponding Provider'
+    )
+
+    spy.mockRestore()
+  })
+})

@@ -1,0 +1,24 @@
+@use '@styles/settings/tokens' as *;
+
+@mixin scrollbar(
+  $size: 1.25rem,
+  $foreground-color: tokens(colors, dark),
+  $background-color: tokens(colors, light)
+) {
+  scrollbar-color: $foreground-color $background-color;
+  scrollbar-width: thin;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+}

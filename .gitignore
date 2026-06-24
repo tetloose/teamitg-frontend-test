@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*storybook.log
+.storybook-out
+storybook-debug.log
+debug-storybook.log
+
+node_modules
+build
+storybook-static
+coverage
+dist
+dist-ssr
+*.local
+
+# env files
+.env*
+!.env.example
+
+# Editor directories and files
+!.gitkeep
+.idea
+.DS_Store
+*:[Zz]one.Identifier*
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# keys
+*.pem
+
+# yarn pnp
+/.pnp
+.pnp.*
+
+# typescript
+*.tsbuildinfo

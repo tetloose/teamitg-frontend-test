@@ -1,0 +1,11 @@
+import { createContext } from '@utils/create-context/create-context.context'
+import { INITIAL_{{constantCase name}} } from './{{kebabCase name}}.constants'
+import type { {{pascalCase name}}Props } from './{{kebabCase name}}.types'
+
+export const { Provider: {{pascalCase name}}Provider, useContextProvider: use{{pascalCase name}}Context } =
+  createContext<{{pascalCase name}}Props, '{{camelCase name}}', 'update{{pascalCase name}}'>(
+    INITIAL_{{constantCase name}},
+    '{{camelCase name}}',
+    'update{{pascalCase name}}',
+    '{{pascalCase name}}Context'
+  )

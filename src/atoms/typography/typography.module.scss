@@ -1,0 +1,35 @@
+@use '@styles/settings' as *;
+
+.typography {
+  &--sml {
+    font-size: rem(deep-get($tokens, typography, font-size, sml));
+    line-height: deep-get($tokens, typography, line-height, sml);
+  }
+
+  &--med {
+    font-size: rem(deep-get($tokens, typography, font-size, med));
+    line-height: deep-get($tokens, typography, line-height, med);
+  }
+
+  &--lrg {
+    font-size: rem(deep-get($tokens, typography, font-size, lrg));
+    line-height: deep-get($tokens, typography, line-height, lrg);
+  }
+
+  &--xlrg {
+    font-size: rem(deep-get($tokens, typography, font-size, xlrg));
+    line-height: deep-get($tokens, typography, line-height, xlrg);
+  }
+
+  &--black {
+    color: tokens(colors, dark);
+  }
+
+  &--gray {
+    color: tokens(colors, gray);
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+}

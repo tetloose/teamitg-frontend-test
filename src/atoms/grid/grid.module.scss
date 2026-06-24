@@ -1,0 +1,57 @@
+@use '@styles/settings' as *;
+
+.grid {
+  display: grid;
+  width: 100%;
+
+  &--gap-none {
+    gap: 0;
+  }
+
+  &--gap-sml {
+    gap: rem(8px);
+  }
+
+  &--gap-med {
+    gap: rem(16px);
+  }
+
+  &--gap-lrg {
+    gap: rem(24px);
+  }
+
+  @for $i from 1 through 12 {
+    &--cols-#{$i} {
+      grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+  }
+
+  @include mq(tokens(breakpoint, mobile)) {
+    @for $i from 1 through 12 {
+      &--mobile-cols-#{$i} {
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+      }
+    }
+  }
+
+  @include mq(tokens(breakpoint, tablet)) {
+    @for $i from 1 through 12 {
+      &--tablet-cols-#{$i} {
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+      }
+    }
+  }
+
+  @include mq(tokens(breakpoint, desktop)) {
+    @for $i from 1 through 12 {
+      &--desktop-cols-#{$i} {
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+      }
+    }
+  }
+
+  &__item {
+    min-width: 0;
+    align-self: stretch;
+  }
+}

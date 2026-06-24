@@ -1,0 +1,63 @@
+{
+  "files.insertFinalNewline": true,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "CSS": "CSS",
+    "SCSS": "CSS",
+    "typescript": "typescriptreact"
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "eslint.validate": [
+    "typescript",
+    "typescriptreact"
+  ],
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+  "js/ts.preferences.importModuleSpecifier": "non-relative",
+  "files.exclude": {
+    ".claude": true,
+    ".d.ts": true,
+    ".github": true,
+    ".husky": true,
+    ".plop": true,
+    ".scripts": true,
+    ".vscode": true,
+    "build": true,
+    "node_modules": true,
+    "storybook-static": true,
+    ".editorconfig": true,
+    ".gitignore": true,
+    ".nvmrc": true,
+    "commitlint.config.cjs": true,
+    "debug-storybook.log": true,
+    "eslint.config.js": true,
+    "package-lock.json": true,
+    "plopfile.mjs": true,
+    "stylelint.config.js": true,
+    "tsconfig.json": true,
+    "tsconfig.tsbuildinfo": true,
+    "vite.config.ts": true,
+    "vitest.shims.d.ts": true
+  },
+  "search.exclude": {
+    "node_modules": true,
+    "build": true,
+    "storybook-static": true
+  }
+}
