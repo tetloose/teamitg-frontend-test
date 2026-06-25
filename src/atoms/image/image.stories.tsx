@@ -1,6 +1,6 @@
 import { Image } from './image.component'
 import { IMAGE_POSITIONS, IMAGE_SIZES } from './image.constants'
-import { imageMock } from './image.mock'
+import { imageMock, imageSourcesMock } from './image.mock'
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
 const meta: Meta<typeof Image> = {
@@ -35,3 +35,7 @@ export default meta
 type Story = StoryObj<typeof Image>
 
 export const Default: Story = {}
+
+export const Sources: Story = {
+  args: imageSourcesMock
+}

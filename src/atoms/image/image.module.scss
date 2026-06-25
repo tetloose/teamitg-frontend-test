@@ -3,8 +3,14 @@
 .image {
   display: block;
   width: 100%;
+  height: 100%;
 
   @include disable(true);
+  @include transition('filter');
+
+  &--blur {
+    filter: blur(15px);
+  }
 
   &--cover {
     @include object-fit(cover, null);

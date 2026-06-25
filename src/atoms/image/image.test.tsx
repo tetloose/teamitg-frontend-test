@@ -1,13 +1,19 @@
 import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { Image } from './image.component'
-import { imageMock } from './image.mock'
+import { imageMock, imageSourcesMock } from './image.mock'
 
 describe('Image component', () => {
   it('renders nothing when src is missing', () => {
     const { container } = render(<Image />)
 
     expect(container.querySelector('img')).toBeNull()
+  })
+
+  it('renders a picture element when src is provided', () => {
+    const { container } = render(<Image {...imageMock} />)
+
+    expect(container.querySelector('picture')).not.toBeNull()
   })
 
   it('renders an img element when src is provided', () => {
@@ -44,5 +50,29 @@ describe('Image component', () => {
     const img = container.querySelector('img')
 
     expect(img?.className).toContain('custom-class')
+  })
+
+  it('applies blur class before image loads', () => {
+    const { container } = render(<Image {...imageMock} blur />)
+    const img = container.querySelector('img')
+
+    expect(img?.className).toContain('image--blur')
+  })
+
+  it('renders a source element per entry in sources', () => {
+    const { container } = render(<Image {...imageSourcesMock} />)
+    const sources = container.querySelectorAll('source')
+
+    expect(sources).toHaveLength(imageSourcesMock.sources!.length)
+  })
+
+  it('sets the correct srcset and media on each source', () => {
+    const { container } = render(<Image {...imageSourcesMock} />)
+    const sources = container.querySelectorAll('source')
+
+    imageSourcesMock.sources!.forEach(({ srcSet, media }, i) => {
+      expect(sources[i].getAttribute('srcset')).toBe(srcSet)
+      expect(sources[i].getAttribute('media')).toBe(media)
+    })
   })
 })

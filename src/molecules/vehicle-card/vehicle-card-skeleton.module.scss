@@ -1,0 +1,63 @@
+@use '@styles/settings' as *;
+
+.vehicle-card-skeleton {
+  position: relative;
+  height: 100%;
+
+  @include mq(tokens(breakpoint, tablet), max-width) {
+    padding-left: rem(200px);
+  }
+
+  @include mq(tokens(breakpoint, tablet)) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__inside {
+    padding: rem(30px) rem(40px);
+  }
+
+  &__item {
+    &--centred {
+      @include mq(tokens(breakpoint, tablet)) {
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__image {
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: rem(200px);
+      aspect-ratio: 1 / 1;
+    }
+
+    @include mq(tokens(breakpoint, tablet)) {
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  &__title {
+    width: 32%;
+    height: rem(60px);
+  }
+
+  &__price {
+    width: 40%;
+    height: rem(35px);
+    margin-top: rem(5px);
+
+    @include mq(tokens(breakpoint, tablet)) {
+      margin-top: rem(40px);
+    }
+  }
+
+  &__description {
+    height: rem(35px);
+    margin-top: rem(18px);
+  }
+}

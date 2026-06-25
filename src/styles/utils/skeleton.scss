@@ -1,0 +1,27 @@
+@use '@styles/settings' as *;
+
+.u-skeleton {
+  background: linear-gradient(
+    90deg,
+    deep-get($tokens, colors, skeleton, base) 25%,
+    deep-get($tokens, colors, skeleton, highlight) 50%,
+    deep-get($tokens, colors, skeleton, base) 75%
+  );
+
+  @include mq-motion((background: deep-get($tokens, colors, skeleton, base))) {
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s infinite linear;
+
+    @include transition('all');
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}

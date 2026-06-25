@@ -42,3 +42,15 @@
     }
   }
 }
+
+@mixin mq-motion($overrides: ()) {
+  @content;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+
+    @each $property, $value in $overrides {
+      #{$property}: $value;
+    }
+  }
+}

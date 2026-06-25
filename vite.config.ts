@@ -33,7 +33,6 @@ export default defineConfig(({ mode }) => {
         '@utils': resolve(__dirname, 'src/utils'),
         '@global': resolve(__dirname, 'src/global'),
         '@styles': resolve(__dirname, 'src/styles'),
-        '@images': resolve(__dirname, 'src/images'),
         '@routes': resolve(__dirname, 'src/routes'),
         '@pages': resolve(__dirname, 'src/pages')
       }

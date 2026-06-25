@@ -20,7 +20,12 @@ export type Tags =
   | 'footer'
   | 'header'
   | 'aside'
+  | 'output'
 
 export type GlobalHtmlTag = {
   tag?: Tags
+}
+
+export type GlobalIsLoading = {
+  isLoading?: boolean
 }
