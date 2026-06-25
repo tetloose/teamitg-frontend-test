@@ -1,9 +1,9 @@
+import '@styles/app.scss'
 import { ErrorBoundary } from 'react-error-boundary'
 import { Toaster } from 'react-hot-toast'
-import type { Preview } from '@storybook/react-vite'
 import { AppProvider } from '@context/app/app.context'
 import { Boundary } from '@utils/boundary/boundary.util'
-import '@styles/app.scss'
+import type { Preview } from '@storybook/react-vite'
 
 const preview: Preview = {
   tags: ['autodocs'],
@@ -29,12 +29,7 @@ const preview: Preview = {
     },
     options: {
       storySort: {
-        order: [
-          'Atoms',
-          'Molecules',
-          'Components',
-          'Layouts'
-        ]
+        order: ['Atoms', 'Molecules', 'Components', 'Layouts']
       }
     },
     backgrounds: {
