@@ -1,5 +1,10 @@
 {
-  "name": "react-ts-vite-storybook",
+  "name": "teamitg-frontend-test",
+  "description": "Frontend technical test for TeamITG - React 19, TypeScript, Vite, Storybook, atomic design",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tetloose/teamitg-frontend-test"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
