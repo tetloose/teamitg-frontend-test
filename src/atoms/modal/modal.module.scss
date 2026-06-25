@@ -44,17 +44,18 @@
   }
 
   &__close {
+    display: flex;
     position: absolute;
     top: 0;
     right: 0;
     width: rem(40px);
     height: rem(40px);
+    align-items: center;
+    justify-content: center;
     background-color: tokens(colors, dark);
     border: none;
     color: tokens(colors, light);
     font-size: rem(20px);
-    line-height: 1;
-    text-align: center;
 
     @include mq-hover {
       cursor: pointer;
