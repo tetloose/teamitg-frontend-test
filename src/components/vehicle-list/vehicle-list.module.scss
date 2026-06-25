@@ -10,9 +10,9 @@
       outline: 1px solid tokens(colors, gray-light);
     }
 
-    &:last-child {
+    &:first-child {
       @include mq(tokens(breakpoint, tablet), max-width) {
-        border-bottom: none;
+        border-top: 1px solid tokens(colors, gray-light);
       }
     }
   }

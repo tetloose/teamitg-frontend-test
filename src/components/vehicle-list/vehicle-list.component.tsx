@@ -8,11 +8,18 @@ import styles from './vehicle-list.module.scss'
 export const VehicleList = ({
   vehicles,
   vehiclesPending,
-  vehiclesError
+  vehiclesError,
+  classNames = []
 }: VehicleListProps) => {
   if (vehiclesPending) {
     return (
-      <Grid mobileCols={1} tabletCols={2} desktopCols={4}>
+      <Grid
+        tag="section"
+        classNames={[...classNames]}
+        mobileCols={1}
+        tabletCols={2}
+        desktopCols={4}
+      >
         {VEHICLE_LIST_SKELETON_IDS.map((id) => (
           <VehicleCard
             key={id}
@@ -38,7 +45,13 @@ export const VehicleList = ({
   }
 
   return (
-    <Grid mobileCols={1} tabletCols={2} desktopCols={4}>
+    <Grid
+      classNames={[...classNames]}
+      tag="section"
+      mobileCols={1}
+      tabletCols={2}
+      desktopCols={4}
+    >
       {vehicles.map((vehicle) => (
         <VehicleCard
           key={vehicle.id}

@@ -1,0 +1,29 @@
+@use '@styles/settings' as *;
+
+.vehicles {
+  padding-right: rem(20px);
+  padding-bottom: rem(40px);
+  padding-left: rem(20px);
+
+  &__header {
+    padding-top: rem(40px);
+
+    @include mq(tokens(breakpoint, tablet)) {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    margin-top: rem(8px);
+  }
+
+  &__items {
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      padding-top: rem(20px);
+    }
+
+    @include mq(tokens(breakpoint, tablet)) {
+      padding-top: rem(40px);
+    }
+  }
+}
