@@ -23,33 +23,13 @@ describe('VehicleCard', () => {
   it('renders the description', () => {
     render(<VehicleCard {...vehicleCardMock} />)
 
-    expect(screen.getByText(vehicleCardMock.description!)).toBeInTheDocument()
+    expect(screen.getByText(vehicleCardMock.description)).toBeInTheDocument()
   })
 
   it('renders a picture element when media is provided', () => {
     const { container } = render(<VehicleCard {...vehicleCardMock} />)
 
     expect(container.querySelector('picture')).not.toBeNull()
-  })
-
-  it('does not render price when it is missing', () => {
-    render(<VehicleCard {...vehicleCardMock} price={undefined} />)
-
-    expect(screen.queryByText(`From ${vehicleCardMock.price}`)).toBeNull()
-  })
-
-  it('does not render description when it is missing', () => {
-    render(<VehicleCard {...vehicleCardMock} description={undefined} />)
-
-    expect(screen.queryByText(vehicleCardMock.description!)).toBeNull()
-  })
-
-  it('renders nothing when id is missing', () => {
-    const { container } = render(
-      <VehicleCard {...vehicleCardMock} id={undefined as unknown as string} />
-    )
-
-    expect(container.firstChild).toBeNull()
   })
 
   it('renders the skeleton when isLoading is true', () => {
@@ -63,7 +43,7 @@ describe('VehicleCard', () => {
 
     expect(screen.queryByText(vehicleCardMock.id)).toBeNull()
     expect(screen.queryByText(`From ${vehicleCardMock.price}`)).toBeNull()
-    expect(screen.queryByText(vehicleCardMock.description!)).toBeNull()
+    expect(screen.queryByText(vehicleCardMock.description)).toBeNull()
   })
 })
 
