@@ -5,7 +5,7 @@ export const contentMock: Content = {
     {
       id: '1',
       image: {
-        src: 'https://via.assets.so/game.png?id=1&q=95&w=360&h=360&fit=fill',
+        src: 'https://picsum.photos/seed/content1/1280/720',
         alt: 'Image 1'
       },
       title: 'Lorem ipsum dolor sit amet consectetur',
@@ -14,7 +14,7 @@ export const contentMock: Content = {
     {
       id: '2',
       image: {
-        src: 'https://via.assets.so/album.png?id=1&q=95&w=360&h=360&fit=fill',
+        src: 'https://picsum.photos/seed/content2/1280/720',
         alt: 'Image 2'
       },
       title: 'Lorem ipsum dolor sit amet consectetur',
@@ -23,7 +23,7 @@ export const contentMock: Content = {
     {
       id: '3',
       image: {
-        src: 'https://via.assets.so/movie.png?id=1&q=95&w=360&h=360&fit=fill',
+        src: 'https://picsum.photos/seed/content3/1280/720',
         alt: 'Image 3'
       },
       title: 'Lorem ipsum dolor sit amet consectetur',

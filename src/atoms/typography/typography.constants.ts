@@ -10,4 +10,13 @@ export const TYPOGRAPHY_TAGS = [
   'em',
   'time'
 ] as const
+
 export const TYPOGRAPHY_COLORS = ['black', 'gray'] as const
+
+export const TYPOGRAPHY_WEIGHTS = ['normal', 'semibold', 'bold'] as const
+
+export const TYPOGRAPHY_TRANSFORMS = [
+  'uppercase',
+  'lowercase',
+  'capitalize'
+] as const

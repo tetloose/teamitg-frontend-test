@@ -1,8 +1,7 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { useState } from 'react'
 import type { ImageProps } from './image.types'
 import clsx from 'clsx'
 import styles from './image.module.scss'
-import 'react-lazy-load-image-component/src/effects/blur.css'
 
 export const Image = ({
   classNames = [],
@@ -12,25 +11,33 @@ export const Image = ({
   width,
   height,
   src,
-  placeholder,
-  blur
+  blur,
+  sources
 }: ImageProps) => {
-  if (!src) return
+  const [loaded, setLoaded] = useState(false)
+
+  if (!src) return null
 
   return (
-    <LazyLoadImage
-      className={clsx(
-        styles['image'],
-        position && styles[`image--position-${position}`],
-        size && styles[`image--${size}`],
-        ...classNames
-      )}
-      src={src ?? ''}
-      placeholderSrc={placeholder ?? ''}
-      width={width ?? ''}
-      height={height ?? ''}
-      alt={alt ?? ''}
-      effect={blur ? 'blur' : undefined}
-    />
+    <picture>
+      {sources?.map(({ srcSet, media }) => (
+        <source key={srcSet} srcSet={srcSet} media={media} />
+      ))}
+      <img
+        className={clsx(
+          styles['image'],
+          position && styles[`image--position-${position}`],
+          size && styles[`image--${size}`],
+          blur && !loaded && styles['image--blur'],
+          ...classNames
+        )}
+        src={src}
+        alt={alt ?? ''}
+        width={width}
+        height={height}
+        loading="lazy"
+        onLoad={() => setLoaded(true)}
+      />
+    </picture>
   )
 }

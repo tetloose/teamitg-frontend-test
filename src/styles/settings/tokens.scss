@@ -12,17 +12,21 @@ $tokens: (
   colors: (
     dark: #000,
     light: #fff,
-    gray: #666
+    gray: #666,
+    skeleton: (
+      base: #f0f0f0,
+      highlight: #e0e0e0
+    )
   ),
   settings: (
     browser-context: 16px
   ),
   typography: (
     font-size: (
-      sml: 14px,
+      sml: 16px,
       med: 18px,
-      lrg: 20px,
-      xlrg: 24px
+      lrg: 24px,
+      xlrg: 42px
     ),
     line-height: (
       sml: 1.5,
@@ -37,8 +41,20 @@ $tokens: (
     desktop: 1080px
   ),
   rem: (
-    mobile: 70%,
+    mobile: 60%,
     tablet: 80%,
     desktop: 100%
+  ),
+  transition: (
+    duration: (
+      fast: 0.2s,
+      med: 0.3s,
+      slow: 0.5s
+    ),
+    timing: (
+      fast: ease-in-out,
+      med: ease,
+      slow: ease-in-out
+    )
   )
 );

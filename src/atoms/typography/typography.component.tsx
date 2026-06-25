@@ -7,6 +7,8 @@ export const Typography = ({
   tag = 'span',
   size = 'med',
   color = 'black',
+  weight,
+  transform,
   text,
   children,
   ...rest
@@ -20,6 +22,8 @@ export const Typography = ({
         tag === 'em' && styles['typography--italic'],
         size && styles[`typography--${size}`],
         color && styles[`typography--${color}`],
+        weight && styles[`typography--${weight}`],
+        transform && styles[`typography--${transform}`],
         ...classNames
       )}
       {...rest}

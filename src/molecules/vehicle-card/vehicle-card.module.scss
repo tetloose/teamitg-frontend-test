@@ -1,0 +1,60 @@
+@use '@styles/settings' as *;
+
+.vehicle-card {
+  position: relative;
+  height: 100%;
+
+  @include mq(tokens(breakpoint, tablet), max-width) {
+    padding-left: rem(200px);
+  }
+
+  @include mq(tokens(breakpoint, tablet)) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: rem(200px);
+      aspect-ratio: 1 / 1;
+    }
+
+    @include mq(tokens(breakpoint, tablet)) {
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  &__inside {
+    padding: rem(30px) rem(40px);
+
+    @include mq(tokens(breakpoint, tablet)) {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    @include mq(tokens(breakpoint, tablet)) {
+      display: inline-block;
+      padding: rem(2px) 0;
+      border-style: solid;
+      border-color: tokens(colors, dark);
+      border-top-width: 2px;
+      border-bottom-width: 2px;
+      text-align: center;
+    }
+  }
+
+  &__price {
+    @include mq(tokens(breakpoint, tablet)) {
+      margin-top: rem(40px);
+    }
+  }
+
+  &__description {
+    margin-top: rem(18px);
+  }
+}
