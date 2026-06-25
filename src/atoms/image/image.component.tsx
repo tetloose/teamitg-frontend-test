@@ -19,7 +19,7 @@ export const Image = ({
   if (!src) return null
 
   return (
-    <picture>
+    <picture className={styles['image__picture']}>
       {sources?.map(({ srcSet, media }) => (
         <source key={srcSet} srcSet={srcSet} media={media} />
       ))}

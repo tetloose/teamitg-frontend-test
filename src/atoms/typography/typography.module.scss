@@ -1,6 +1,8 @@
 @use '@styles/settings' as *;
 
 .typography {
+  text-wrap: pretty;
+
   &--sml {
     font-size: rem(deep-get($tokens, typography, font-size, sml));
     line-height: deep-get($tokens, typography, line-height, sml);

@@ -1,0 +1,42 @@
+@use '@styles/settings' as *;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(rem(10px));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vehicle-list {
+  &__item {
+    @include mq-motion {
+      opacity: 0;
+      animation: fade-in 0.4s ease forwards;
+
+      @for $i from 1 through 8 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{($i - 1) * 0.1}s;
+        }
+      }
+    }
+
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      border-bottom: 1px solid tokens(colors, gray-light);
+    }
+
+    @include mq(tokens(breakpoint, tablet)) {
+      outline: 1px solid tokens(colors, gray-light);
+    }
+
+    &:first-child {
+      @include mq(tokens(breakpoint, tablet), max-width) {
+        border-top: 1px solid tokens(colors, gray-light);
+      }
+    }
+  }
+}

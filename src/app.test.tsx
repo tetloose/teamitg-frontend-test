@@ -1,11 +1,21 @@
 import { MemoryRouter } from 'react-router-dom'
 import { render, screen, waitFor } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
-import { contentMock } from '@hooks/use-content/use-content.mock'
-import { useHome } from '@hooks/use-home/use-home.hooks'
+import { useContent } from '@hooks/use-content/use-content.hooks'
+import { useVehicles } from '@hooks/use-vehicles/use-vehicles.hooks'
+import { vehiclesMock } from '@hooks/use-vehicles/use-vehicles.mock'
 import App from './app'
 
-vi.mock('@hooks/use-home/use-home.hooks')
+vi.mock('@hooks/use-vehicles/use-vehicles.hooks')
+vi.mock('@hooks/use-content/use-content.hooks')
+
+const mockDefaults = () => {
+  vi.mocked(useContent).mockReturnValue({
+    content: { title: 'Our Vehicles', subtitle: 'Explore the Jaguar range' },
+    contentPending: false,
+    contentError: null
+  })
+}
 
 const renderApp = (initialPath = '/') =>
   render(
@@ -16,10 +26,11 @@ const renderApp = (initialPath = '/') =>
 
 describe('App', () => {
   it('shows the Loading fallback on initial render', () => {
-    vi.mocked(useHome).mockReturnValue({
-      content: null,
-      contentPending: false,
-      contentError: null
+    mockDefaults()
+    vi.mocked(useVehicles).mockReturnValue({
+      vehicles: null,
+      vehiclesPending: true,
+      vehiclesError: null
     })
 
     const { container } = renderApp()
@@ -27,27 +38,27 @@ describe('App', () => {
     expect(container.querySelector('span')).not.toBeNull()
   })
 
-  it('renders the home route', async () => {
-    vi.mocked(useHome).mockReturnValue({
-      content: contentMock.homepage,
-      contentPending: false,
-      contentError: null
+  it('renders the vehicles route', async () => {
+    mockDefaults()
+    vi.mocked(useVehicles).mockReturnValue({
+      vehicles: vehiclesMock,
+      vehiclesPending: false,
+      vehiclesError: null
     })
 
     renderApp('/')
 
     await waitFor(() => {
-      expect(screen.getAllByRole('heading', { level: 2 })).toHaveLength(
-        contentMock.homepage.length
-      )
+      expect(screen.getAllByRole('article')).toHaveLength(vehiclesMock.length)
     })
   })
 
   it('renders NotFound on an unknown route', async () => {
-    vi.mocked(useHome).mockReturnValue({
-      content: null,
-      contentPending: false,
-      contentError: null
+    mockDefaults()
+    vi.mocked(useVehicles).mockReturnValue({
+      vehicles: null,
+      vehiclesPending: false,
+      vehiclesError: null
     })
 
     renderApp('/unknown')

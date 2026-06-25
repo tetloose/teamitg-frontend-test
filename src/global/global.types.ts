@@ -26,6 +26,10 @@ export type GlobalHtmlTag = {
   tag?: Tags
 }
 
+export type GlobalId = {
+  id?: string
+}
+
 export type GlobalIsLoading = {
   isLoading?: boolean
 }

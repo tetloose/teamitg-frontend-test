@@ -60,21 +60,6 @@ export default function (plop) {
             path: `${base}/{{kebabCase name}}.test.tsx`,
             templateFile: '.plop/test.tsx.hbs',
           },
-          {
-            type: 'add',
-            path: 'src/hooks/use-{{kebabCase name}}/use-{{kebabCase name}}.hooks.ts',
-            templateFile: '.plop/hook.ts.hbs',
-          },
-          {
-            type: 'add',
-            path: 'src/hooks/use-{{kebabCase name}}/use-{{kebabCase name}}.types.ts',
-            templateFile: '.plop/hook-types.ts.hbs',
-          },
-          {
-            type: 'add',
-            path: 'src/hooks/use-{{kebabCase name}}/use-{{kebabCase name}}.test.ts',
-            templateFile: '.plop/hook-test.ts.hbs',
-          },
         ]
       }
 

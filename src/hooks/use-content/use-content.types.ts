@@ -1,14 +1,7 @@
-import type { ImageProps } from '@atoms/image/image.types'
-
-export type Homepage = {
-  id: string
-  image?: ImageProps
-  title?: string
-  body?: string
-}
+import type { VehiclesContent } from '@hooks/use-vehicles/use-vehicles.types'
 
 export type Content = {
-  homepage: Homepage[]
+  vehicles: VehiclesContent
 }
 
 export type ContentProps<T, K extends keyof T> = K extends keyof T

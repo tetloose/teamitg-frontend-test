@@ -1,0 +1,35 @@
+@use '@styles/settings' as *;
+
+.vehicle-detail {
+  &__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  &__inside {
+    padding: rem(24px) rem(24px) rem(40px);
+  }
+
+  &__price {
+    padding-top: rem(8px);
+  }
+
+  &__description {
+    padding-top: rem(5px);
+  }
+
+  &__read-more {
+    margin-top: rem(20px);
+  }
+
+  &__meta {
+    display: grid;
+    padding-top: rem(8px);
+    grid-template-columns: max-content 1fr;
+    gap: rem(8px) rem(16px);
+  }
+
+  &__dt {
+    display: flex;
+    align-items: center;
+  }
+}

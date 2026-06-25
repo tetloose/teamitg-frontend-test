@@ -8,6 +8,10 @@
   @include disable(true);
   @include transition('filter');
 
+  &__picture {
+    overflow: hidden;
+  }
+
   &--blur {
     filter: blur(15px);
   }

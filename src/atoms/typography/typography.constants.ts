@@ -8,7 +8,13 @@ export const TYPOGRAPHY_TAGS = [
   'h6',
   'p',
   'em',
-  'time'
+  'time',
+  'ol',
+  'ul',
+  'li',
+  'dl',
+  'dt',
+  'dd'
 ] as const
 
 export const TYPOGRAPHY_COLORS = ['black', 'gray'] as const

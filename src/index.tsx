@@ -4,7 +4,6 @@ import { ErrorBoundary } from 'react-error-boundary'
 import { Toaster } from 'react-hot-toast'
 import { BrowserRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom/client'
-import { AppProvider } from '@context/app/app.context'
 import { Boundary } from '@utils/boundary/boundary.util'
 import App from './app'
 
@@ -15,9 +14,7 @@ root.render(
     <Toaster />
     <BrowserRouter>
       <StrictMode>
-        <AppProvider>
-          <App />
-        </AppProvider>
+        <App />
       </StrictMode>
     </BrowserRouter>
   </ErrorBoundary>

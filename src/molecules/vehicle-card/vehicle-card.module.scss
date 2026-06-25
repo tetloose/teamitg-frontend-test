@@ -1,19 +1,57 @@
 @use '@styles/settings' as *;
 
 .vehicle-card {
-  position: relative;
-  height: 100%;
+  $vehicle-card: &;
 
-  @include mq(tokens(breakpoint, tablet), max-width) {
-    padding-left: rem(200px);
-  }
+  height: 100%;
 
   @include mq(tokens(breakpoint, tablet)) {
     display: flex;
     flex-direction: column;
   }
 
+  &__button {
+    position: relative;
+
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      padding-left: rem(200px);
+    }
+
+    @include mq(tokens(breakpoint, tablet)) {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+    }
+
+    @include mq-hover {
+      cursor: pointer;
+
+      @include transition('outline');
+
+      &:hover #{$vehicle-card}__image {
+        @include mq-motion {
+          transform: scale(1.02);
+        }
+      }
+
+      &:hover #{$vehicle-card}__title {
+        @include mq-motion {
+          opacity: .8;
+        }
+      }
+    }
+
+    &:focus-visible {
+      z-index: 1;
+      outline: 2px solid tokens(colors, dark);
+    }
+  }
+
   &__image {
+    @include mq-hover {
+      @include transition('filter, transform');
+    }
+
     @include mq(tokens(breakpoint, tablet), max-width) {
       position: absolute;
       top: 0;
@@ -29,14 +67,26 @@
   }
 
   &__inside {
-    padding: rem(30px) rem(40px);
+    padding-top: rem(30px);
+    padding-bottom: rem(30px);
+
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      padding-right: rem(40px);
+      padding-left: rem(40px);
+    }
 
     @include mq(tokens(breakpoint, tablet)) {
+      padding-right: rem(16px);
+      padding-left: rem(16px);
       text-align: center;
     }
   }
 
   &__title {
+    @include mq-hover {
+      @include transition('opacity');
+    }
+
     @include mq(tokens(breakpoint, tablet)) {
       display: inline-block;
       padding: rem(2px) 0;
@@ -44,17 +94,20 @@
       border-color: tokens(colors, dark);
       border-top-width: 2px;
       border-bottom-width: 2px;
-      text-align: center;
     }
   }
 
   &__price {
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      margin-top: rem(5px);
+    }
+
     @include mq(tokens(breakpoint, tablet)) {
-      margin-top: rem(40px);
+      margin-top: rem(34px);
     }
   }
 
   &__description {
-    margin-top: rem(18px);
+    margin-top: rem(10px);
   }
 }

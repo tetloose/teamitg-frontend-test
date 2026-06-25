@@ -1,13 +1,16 @@
 import { Grid } from '@atoms/grid/grid.component'
 import { SKELETON } from '@global/global.constants'
+import type { VehicleCardSkeletonProps } from './vehicle-card.types'
 import clsx from 'clsx'
 import styles from './vehicle-card-skeleton.module.scss'
 
-export const VehicleCardSkeleton = () => {
+export const VehicleCardSkeleton = ({
+  classNames = []
+}: VehicleCardSkeletonProps) => {
   return (
     <Grid.Item
       tag="output"
-      classNames={[styles['vehicle-card-skeleton']]}
+      classNames={[styles['vehicle-card-skeleton'], ...classNames]}
       aria-label="Loading"
     >
       <div
