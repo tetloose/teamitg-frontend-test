@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { X } from 'lucide-react'
 import type { ModalProps } from './modal.types'
 import clsx from 'clsx'
 import styles from './modal.module.scss'
@@ -104,7 +105,7 @@ export const Modal = ({
             aria-label="Close modal"
             type="button"
           >
-            ✕
+            <X aria-hidden="true" size={20} />
           </button>
           {children}
         </>

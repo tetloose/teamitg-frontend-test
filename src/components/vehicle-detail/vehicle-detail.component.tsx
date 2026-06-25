@@ -1,7 +1,9 @@
+import { Car, Cog, Leaf, Users } from 'lucide-react'
 import { getMediaProps } from '@utils/get-media-props/get-media-props.util'
 import { Grid } from '@atoms/grid/grid.component'
 import { Image } from '@atoms/image/image.component'
 import { Typography } from '@atoms/typography/typography.component'
+import { ReadMore } from '@molecules/read-more/read-more.component'
 import { formatEmissions } from './vehicle-detail.utils'
 import { VehicleDetailSkeleton } from './vehicle-detail-skeleton.component'
 import type { VehicleDetailProps } from './vehicle-detail.types'
@@ -60,60 +62,58 @@ const VehicleDetail = ({ vehicle, isLoading }: VehicleDetailProps) => {
           />
         ) : null}
         {vehicle.meta ? (
-          <Typography
-            tag="dl"
-            size="sml"
-            color="gray"
-            classNames={[styles['vehicle-detail__meta']]}
-          >
+          <ReadMore classNames={[styles['vehicle-detail__read-more']]}>
             <Typography
-              tag="dt"
-              weight="semibold"
-              size="sml"
-              text="Passengers"
-            />
-            <Typography
-              tag="dd"
+              tag="dl"
               size="sml"
               color="gray"
-              text={String(vehicle.meta.passengers)}
-            />
-            <Typography
-              tag="dt"
-              weight="semibold"
-              size="sml"
-              text="Drivetrain"
-            />
-            <Typography
-              tag="dd"
-              size="sml"
-              color="gray"
-              text={vehicle.meta.drivetrain.join(', ')}
-            />
-            <Typography
-              tag="dt"
-              weight="semibold"
-              size="sml"
-              text="Body styles"
-            />
-            <Typography
-              tag="dd"
-              size="sml"
-              color="gray"
-              text={vehicle.meta.bodystyles.join(', ')}
-            />
-            {emissions ? (
-              <>
-                <Typography
-                  tag="dt"
-                  weight="semibold"
-                  size="sml"
-                  text="Emissions"
-                />
-                <Typography tag="dd" size="sml" color="gray" text={emissions} />
-              </>
-            ) : null}
-          </Typography>
+              classNames={[styles['vehicle-detail__meta']]}
+            >
+              <Typography tag="dt" classNames={[styles['vehicle-detail__dt']]}>
+                <Users aria-label="Passengers" size={20} />
+              </Typography>
+              <Typography
+                tag="dd"
+                size="sml"
+                color="gray"
+                text={String(vehicle.meta.passengers)}
+              />
+              <Typography tag="dt" classNames={[styles['vehicle-detail__dt']]}>
+                <Cog aria-label="Drivetrain" size={20} />
+              </Typography>
+              <Typography
+                tag="dd"
+                size="sml"
+                color="gray"
+                text={vehicle.meta.drivetrain.join(', ')}
+              />
+              <Typography tag="dt" classNames={[styles['vehicle-detail__dt']]}>
+                <Car aria-label="Body styles" size={20} />
+              </Typography>
+              <Typography
+                tag="dd"
+                size="sml"
+                color="gray"
+                text={vehicle.meta.bodystyles.join(', ')}
+              />
+              {emissions ? (
+                <>
+                  <Typography
+                    tag="dt"
+                    classNames={[styles['vehicle-detail__dt']]}
+                  >
+                    <Leaf aria-label="Emissions" size={20} />
+                  </Typography>
+                  <Typography
+                    tag="dd"
+                    size="sml"
+                    color="gray"
+                    text={emissions}
+                  />
+                </>
+              ) : null}
+            </Typography>
+          </ReadMore>
         ) : null}
       </div>
     </Grid.Item>

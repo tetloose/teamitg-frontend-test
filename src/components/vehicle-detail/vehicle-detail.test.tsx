@@ -22,8 +22,8 @@ describe('VehicleDetail', () => {
   it('renders meta information', () => {
     render(<VehicleDetail {...vehicleDetailMock} />)
 
-    expect(screen.getByText('Passengers')).toBeInTheDocument()
-    expect(screen.getByText('Drivetrain')).toBeInTheDocument()
+    expect(screen.getByLabelText('Passengers')).toBeInTheDocument()
+    expect(screen.getByLabelText('Drivetrain')).toBeInTheDocument()
   })
 
   it('renders skeleton when loading', () => {

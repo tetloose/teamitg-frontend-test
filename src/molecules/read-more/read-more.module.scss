@@ -1,0 +1,57 @@
+@use '@styles/settings' as *;
+
+.read-more {
+  &__trigger {
+    display: flex;
+    padding: rem(4px) 0;
+    align-items: center;
+    gap: rem(4px);
+    background: none;
+    border: none;
+    color: tokens(colors, dark);
+
+    @include mq-motion {
+      @include transition('opacity');
+    }
+
+    @include mq-hover {
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &:focus-visible {
+      outline: rem(2px) solid tokens(colors, dark);
+      outline-offset: rem(2px);
+    }
+  }
+
+  &__icon {
+    @include mq-motion {
+      @include transition('transform');
+    }
+
+    &--open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    @include mq-motion {
+      @include transition('grid-template-rows');
+    }
+
+    &--open {
+      grid-template-rows: 1fr;
+    }
+  }
+
+  &__inside {
+    overflow: hidden;
+  }
+}

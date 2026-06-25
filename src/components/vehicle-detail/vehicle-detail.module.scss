@@ -17,10 +17,19 @@
     padding-top: rem(5px);
   }
 
+  &__read-more {
+    margin-top: rem(20px);
+  }
+
   &__meta {
     display: grid;
-    padding-top: rem(20px);
+    padding-top: rem(8px);
     grid-template-columns: max-content 1fr;
     gap: rem(8px) rem(16px);
+  }
+
+  &__dt {
+    display: flex;
+    align-items: center;
   }
 }
