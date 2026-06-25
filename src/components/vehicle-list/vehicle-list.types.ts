@@ -5,4 +5,5 @@ export type VehicleListProps = {
   vehicles: Vehicles[] | null
   vehiclesPending: boolean
   vehiclesError: Error | null
+  onSelect?: (vehicle: Vehicles) => void
 } & GlobalClassNames

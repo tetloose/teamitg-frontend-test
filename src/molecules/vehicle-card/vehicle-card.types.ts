@@ -6,6 +6,8 @@ export type VehicleCardProps = Pick<
   'id' | 'media' | 'description' | 'price'
 > &
   GlobalIsLoading &
-  GlobalClassNames
+  GlobalClassNames & {
+    onSelect?: () => void
+  }
 
 export type VehicleCardSkeletonProps = Pick<VehicleCardProps, 'classNames'>

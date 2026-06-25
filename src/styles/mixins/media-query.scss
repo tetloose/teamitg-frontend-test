@@ -47,6 +47,7 @@
   @content;
 
   @media (prefers-reduced-motion: reduce) {
+    transition: none;
     animation: none;
 
     @each $property, $value in $overrides {

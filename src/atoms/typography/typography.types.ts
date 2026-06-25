@@ -7,6 +7,7 @@ import type {
 import type {
   GlobalChildren,
   GlobalClassNames,
+  GlobalId,
   GlobalSizes
 } from '@global/global.types'
 
@@ -23,4 +24,5 @@ export type TypographyProps = {
   transform?: TypographyTransform
   text?: string
 } & GlobalClassNames &
-  GlobalChildren
+  GlobalChildren &
+  GlobalId

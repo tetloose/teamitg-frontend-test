@@ -7,9 +7,12 @@ import {
   vehiclesLayoutMock
 } from './vehicles.mock'
 
+const renderVehicles = (props: typeof vehiclesLayoutMock) =>
+  render(<Vehicles {...props} />)
+
 describe('Vehicles', () => {
   it('renders vehicle cards', () => {
-    render(<Vehicles {...vehiclesLayoutMock} />)
+    renderVehicles(vehiclesLayoutMock)
 
     expect(screen.getAllByRole('article')).toHaveLength(
       vehiclesLayoutMock.vehicles!.length
@@ -17,13 +20,13 @@ describe('Vehicles', () => {
   })
 
   it('renders skeleton cards when pending', () => {
-    render(<Vehicles {...vehiclesLayoutLoadingMock} />)
+    renderVehicles(vehiclesLayoutLoadingMock)
 
     expect(screen.getAllByRole('status')).toHaveLength(8)
   })
 
   it('renders not found when vehicles null', () => {
-    render(<Vehicles {...vehiclesLayoutErrorMock} />)
+    renderVehicles(vehiclesLayoutErrorMock)
 
     expect(screen.getByText('No vehicles')).toBeInTheDocument()
   })

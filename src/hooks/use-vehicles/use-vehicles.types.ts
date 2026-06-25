@@ -38,3 +38,8 @@ export type FetchVehiclesProps = {
   id?: string
   signal: AbortSignal
 }
+
+export type VehiclesContent = {
+  title?: string
+  subtitle?: string
+}

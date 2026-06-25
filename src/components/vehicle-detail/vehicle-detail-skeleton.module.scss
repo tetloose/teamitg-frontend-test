@@ -1,0 +1,20 @@
+@use '@styles/settings' as *;
+
+.vehicle-detail-skeleton {
+  &__image {
+    aspect-ratio: 16 / 9;
+  }
+
+  &__content {
+    padding: rem(24px);
+  }
+
+  &__title {
+    height: rem(32px);
+    margin-bottom: rem(12px);
+  }
+
+  &__body {
+    height: rem(80px);
+  }
+}

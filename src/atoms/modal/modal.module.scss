@@ -1,0 +1,79 @@
+@use '@styles/settings' as *;
+
+.modal {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: min(90vw, rem(680px));
+  min-height: rem(200px);
+  max-height: 90vh;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  background: tokens(colors, light);
+  border: none;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+
+  @include mq-motion {
+    @include transition('all');
+  }
+
+  &[data-open] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &::backdrop {
+    opacity: 0;
+    visibility: hidden;
+    background: tokens(colors, overlay);
+    backdrop-filter: blur(4px);
+
+    @include mq-motion {
+      @include transition('all');
+    }
+  }
+
+  &[data-open]::backdrop {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: rem(40px);
+    height: rem(40px);
+    background-color: tokens(colors, dark);
+    border: none;
+    color: tokens(colors, light);
+    font-size: rem(20px);
+    line-height: 1;
+    text-align: center;
+
+    @include mq-hover {
+      cursor: pointer;
+
+      @include mq-motion {
+        @include transition('background, color');
+      }
+
+      &:hover {
+        @include mq-motion {
+          background-color: tokens(colors, gray-light);
+          color: tokens(colors, dark);
+        }
+      }
+    }
+
+    &:focus-visible {
+      background-color: tokens(colors, gray-light);
+      color: tokens(colors, dark);
+    }
+  }
+}

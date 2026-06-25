@@ -133,6 +133,16 @@ Three interactive scripts handle the git workflow to keep branch names and commi
 
 These sit on top of the Husky hooks and commitlint config to ensure nothing non-conforming can be committed or pushed.
 
+## Redux
+
+The brief mentioned Redux as a candidate technology. It was considered and set aside deliberately.
+
+The only piece of state that could justify a global store is the selected vehicle, which lives in `VehiclesPage` as `useState<Vehicles | null>(null)`. It is passed down via an `onSelect` prop through the layout and list to the card, and read directly in the page to control the modal. There is no case in this app where that state needs to be read by an unrelated subtree, nor is there any complex state logic that would benefit from reducers and actions.
+
+Redux earns its place when state is genuinely global (read by many disconnected parts of the tree), when state transitions are complex enough to warrant explicit actions, or when middleware is needed for logging, persistence, or async orchestration. None of those conditions apply here. Adding Redux to manage a single nullable value would introduce a store, a slice, a provider, typed action creators, and selectors for no practical gain over a one-liner `useState`.
+
+If the app were to grow to include a basket, authentication, permissions, or multi-step flows, Redux Toolkit would be the right addition. At the current scope it would be complexity for its own sake.
+
 ## AI Workflow
 
 I use Claude as a coding agent, but with guardrails. The approach is: I define the standards, the agent follows them.

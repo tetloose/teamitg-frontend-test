@@ -1,7 +1,6 @@
 import '@styles/app.scss'
 import { ErrorBoundary } from 'react-error-boundary'
 import { Toaster } from 'react-hot-toast'
-import { AppProvider } from '@context/app/app.context'
 import { Boundary } from '@utils/boundary/boundary.util'
 import type { Preview } from '@storybook/react-vite'
 
@@ -11,9 +10,7 @@ const preview: Preview = {
     (Story) => (
       <ErrorBoundary FallbackComponent={Boundary}>
         <Toaster />
-        <AppProvider>
-          <Story />
-        </AppProvider>
+        <Story />
       </ErrorBoundary>
     )
   ],

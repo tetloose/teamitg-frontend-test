@@ -9,6 +9,7 @@ export const VehicleList = ({
   vehicles,
   vehiclesPending,
   vehiclesError,
+  onSelect,
   classNames = []
 }: VehicleListProps) => {
   if (vehiclesPending) {
@@ -61,6 +62,7 @@ export const VehicleList = ({
           description={vehicle.description}
           price={vehicle.price}
           isLoading={vehiclesPending}
+          onSelect={() => onSelect?.(vehicle)}
         />
       ))}
     </Grid>

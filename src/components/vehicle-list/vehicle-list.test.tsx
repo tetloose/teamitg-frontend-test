@@ -7,9 +7,12 @@ import {
   vehicleListMock
 } from './vehicle-list.mock'
 
+const renderList = (props: typeof vehicleListMock) =>
+  render(<VehicleList {...props} />)
+
 describe('VehicleList', () => {
   it('renders skeleton cards when vehiclesPending is true', () => {
-    render(<VehicleList {...vehicleListLoadingMock} />)
+    renderList(vehicleListLoadingMock)
 
     expect(
       screen.getAllByRole('status', { name: 'Loading' }).length
@@ -17,13 +20,13 @@ describe('VehicleList', () => {
   })
 
   it('renders not found when vehicles is null', () => {
-    render(<VehicleList {...vehicleListErrorMock} />)
+    renderList(vehicleListErrorMock)
 
     expect(screen.getByText('No vehicles')).toBeInTheDocument()
   })
 
   it('renders a card for each vehicle', () => {
-    render(<VehicleList {...vehicleListMock} />)
+    renderList(vehicleListMock)
 
     vehicleListMock.vehicles!.forEach((vehicle) => {
       expect(screen.getByText(vehicle.id)).toBeInTheDocument()
@@ -31,7 +34,7 @@ describe('VehicleList', () => {
   })
 
   it('does not render vehicle ids when loading', () => {
-    render(<VehicleList {...vehicleListLoadingMock} />)
+    renderList(vehicleListLoadingMock)
 
     vehicleListLoadingMock.vehicles!.forEach((vehicle) => {
       expect(screen.queryByText(vehicle.id)).toBeNull()
