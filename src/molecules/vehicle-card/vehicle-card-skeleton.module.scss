@@ -43,13 +43,16 @@
 
   &__title {
     width: 32%;
-    height: rem(60px);
+    height: rem(50px);
   }
 
   &__price {
     width: 40%;
-    height: rem(35px);
-    margin-top: rem(5px);
+    height: rem(25px);
+
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      margin-top: rem(10px);
+    }
 
     @include mq(tokens(breakpoint, tablet)) {
       margin-top: rem(40px);
@@ -57,7 +60,7 @@
   }
 
   &__description {
-    height: rem(35px);
+    height: rem(25px);
     margin-top: rem(18px);
   }
 }

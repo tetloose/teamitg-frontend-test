@@ -7,3 +7,5 @@ export type VehicleCardProps = Pick<
 > &
   GlobalIsLoading &
   GlobalClassNames
+
+export type VehicleCardSkeletonProps = Pick<VehicleCardProps, 'classNames'>

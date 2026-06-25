@@ -1,0 +1,19 @@
+@use '@styles/settings' as *;
+
+.vehicle-list {
+  &__item {
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      border-bottom: 1px solid tokens(colors, gray-light);
+    }
+
+    @include mq(tokens(breakpoint, tablet)) {
+      outline: 1px solid tokens(colors, gray-light);
+    }
+
+    &:last-child {
+      @include mq(tokens(breakpoint, tablet), max-width) {
+        border-bottom: none;
+      }
+    }
+  }
+}

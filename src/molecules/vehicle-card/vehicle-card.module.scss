@@ -29,9 +29,17 @@
   }
 
   &__inside {
-    padding: rem(30px) rem(40px);
+    padding-top: rem(30px);
+    padding-bottom: rem(30px);
+
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      padding-right: rem(40px);
+      padding-left: rem(40px);
+    }
 
     @include mq(tokens(breakpoint, tablet)) {
+      padding-right: rem(16px);
+      padding-left: rem(16px);
       text-align: center;
     }
   }
@@ -49,12 +57,16 @@
   }
 
   &__price {
+    @include mq(tokens(breakpoint, tablet), max-width) {
+      margin-top: rem(5px);
+    }
+
     @include mq(tokens(breakpoint, tablet)) {
-      margin-top: rem(40px);
+      margin-top: rem(34px);
     }
   }
 
   &__description {
-    margin-top: rem(18px);
+    margin-top: rem(10px);
   }
 }

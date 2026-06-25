@@ -52,5 +52,23 @@ export const vehiclesMock: Vehicles[] = [
       bodystyles: ['COUPÉ', 'CONVERTIBLE'],
       emissions: { template: 'CO2 Emissions $value g/km', value: 234 }
     }
+  },
+  {
+    id: 'xj',
+    modelYear: 'k16',
+    apiUrl: '/api/vehicle_xj.json',
+    media: [
+      { name: 'vehicle', url: '/images/16x9/xj_k16.jpg' },
+      { name: 'vehicle', url: '/images/1x1/xj_k16.jpg' }
+    ],
+    description:
+      'Premium luxury saloon, spacious and beautiful yet powerfully agile.',
+    price: '£70,000',
+    meta: {
+      passengers: 5,
+      drivetrain: ['AWD', 'RWD'],
+      bodystyles: ['saloon (SWB)', 'saloon (LWB)'],
+      emissions: { template: 'CO2 Emissions $value g/km', value: 149 }
+    }
   }
 ]

@@ -14,7 +14,7 @@ export const VehicleCard = ({
   price,
   isLoading
 }: VehicleCardProps) => {
-  if (isLoading) return <VehicleCardSkeleton />
+  if (isLoading) return <VehicleCardSkeleton classNames={classNames} />
 
   if (!id) return
 
@@ -49,7 +49,7 @@ export const VehicleCard = ({
         {price ? (
           <Typography
             tag="p"
-            size="lrg"
+            size="med"
             weight="semibold"
             color="gray"
             text={`From ${price}`}
@@ -60,7 +60,7 @@ export const VehicleCard = ({
           <Typography
             tag="p"
             text={description}
-            size="lrg"
+            size="sml"
             color="gray"
             classNames={[styles['vehicle-card__description']]}
           />
