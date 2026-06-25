@@ -1,4 +1,4 @@
-export type ApiUrls = 'content'
+export type ApiUrls = 'content' | 'vehicles' | 'vehicle'
 
 export type ApiProps = {
   url: ApiUrls

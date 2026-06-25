@@ -59,5 +59,18 @@
     "node_modules": true,
     "build": true,
     "storybook-static": true
-  }
+  },
+  "cSpell.words": [
+    "apiUrl",
+    "bodystyles",
+    "drivetrain",
+    "fpace",
+    "ftype",
+    "ipace",
+    "modelYear",
+    "sportbrake",
+    "xe",
+    "xf",
+    "xj"
+  ]
 }

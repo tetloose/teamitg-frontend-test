@@ -5,7 +5,7 @@ const brandTheme = create({
   base: 'dark',
   brandTitle: 'TeamITG',
   brandUrl: 'https://github.com/tetloose/teamitg-frontend-test',
-  brandImage: '/assets/images/logo.svg',
+  brandImage: '/images/logo.svg',
   brandTarget: '_blank'
 })
 
