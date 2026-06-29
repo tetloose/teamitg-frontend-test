@@ -1,5 +1,5 @@
+import { cs } from '@utils/cs/cs.utils'
 import type { GridSharedProps } from './grid.types'
-import clsx from 'clsx'
 import styles from './grid.module.scss'
 
 export const GridItem = ({
@@ -11,7 +11,7 @@ export const GridItem = ({
   const Tag = tag
 
   return (
-    <Tag className={clsx(styles['grid__item'], ...classNames)} {...rest}>
+    <Tag className={cs(styles['grid__item'], ...classNames)} {...rest}>
       {children}
     </Tag>
   )
